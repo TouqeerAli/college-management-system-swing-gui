@@ -39,3 +39,26 @@ To run this project:
 - Java Swing for the graphical user interface.
 - NetBeans IDE for development and design.
 - Database (e.g., MySQL) for data storage.
+
+## Project Images:
+
+### Login Frame:
+
+![login_frame](https://github.com/TouqeerAli/college-management-system-swing-gui/assets/103946729/cdd0078f-feb6-4756-8a8f-ff40dff1f30a)
+
+### Main Menu Frame:
+
+![dashboard](https://github.com/TouqeerAli/college-management-system-swing-gui/assets/103946729/61d41ff3-0861-4f87-8c80-53791b93fb4a)
+
+#3# Student Frame:
+
+![student_frame](https://github.com/TouqeerAli/college-management-system-swing-gui/assets/103946729/a075731c-192a-45a3-81a3-7985b0249c92)
+
+### Department Frame:
+
+![department_frame](https://github.com/TouqeerAli/college-management-system-swing-gui/assets/103946729/0c0baaa1-5861-4392-9491-bb9278f67d8a)
+
+### Course Frame:
+
+![course_frame](https://github.com/TouqeerAli/college-management-system-swing-gui/assets/103946729/b8c9d688-bdcf-49e2-a73d-27e36109285b)
+
