@@ -26,6 +26,7 @@ public class StudentCourseDAOImpl implements StudentCourseDAO {
     @Override
     public void addStudentCourse(Integer sID, Integer cID) {
         try {
+            System.out.println("Course ID: " + cID);
             Connection con = DbConnection.getConnection();
             PreparedStatement ps = con.prepareStatement("insert into student_course values(?,?)");
             ps.setInt(1, sID);
@@ -39,25 +40,22 @@ public class StudentCourseDAOImpl implements StudentCourseDAO {
     @Override
     public List<Course> getCourses(Integer id) {
         List<Course> list = new ArrayList<>();
-        Course course = new Course();
+
         try {
             Connection con = DbConnection.getConnection();
             PreparedStatement ps = con.prepareStatement("select c.c_name from course c inner join student_course sc on c.c_id=sc.c_id where sc.st_id=? ");
             ps.setInt(1, id);
             ResultSet rst = ps.executeQuery();
-//System.out.println("Before adding");
+
             while (rst.next()) {
-                //course.setId(id);
+                Course course = new Course();
+
                 course.setName(rst.getString("c.c_name"));
-               System.out.println(rst.getString("c.c_name"));
+
                 list.add(course);
-//                System.out.println("After adding");
-//            for(Course c:list){
-//                System.out.println(c.getName());
-//            }
+
             }
-            
-            list.add(course);
+
             return list;
         } catch (SQLException ex) {
             Logger.getLogger(StudentCourseDAOImpl.class.getName()).log(Level.SEVERE, null, ex);

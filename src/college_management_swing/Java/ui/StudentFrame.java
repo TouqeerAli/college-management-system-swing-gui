@@ -62,21 +62,19 @@ public class StudentFrame extends javax.swing.JFrame {
         studentTableModel = new DefaultTableModel(column, 0);
         List<Student> student = studentDAO.getAllStudents();
 
-//            System.err.println(course);
-        
         for (Student s : student) {
-           List<Course> course = studentCourseDAO.getCourses(s.getId());
+            List<Course> course = studentCourseDAO.getCourses(s.getId());
             List<String> list = new ArrayList<>();
             for (Course c : course) {
-                
+
                 list.add(c.getName());
-               // System.out.print(c.getName()+" ");
+
             }
 
             Object[] row = {s.getId(), s.getName(), s.getAge(), s.getRollno(), s.getEmail(), s.getDepartment().getName(), list};
             studentTableModel.addRow(row);
             studentTable.setModel(studentTableModel);
-           
+
         }
         studentTable.getColumnModel().getColumn(0).setWidth(0);
         studentTable.getColumnModel().getColumn(0).setMinWidth(0);
@@ -96,11 +94,10 @@ public class StudentFrame extends javax.swing.JFrame {
         List<Course> courses = courseDAO.getAllCourses();
         coursePanel.setLayout(new GridLayout(0, 3));
         for (Course c : courses) {
-           // System.out.println(c.getName());
+
             JCheckBox checkbox = new JCheckBox(c.getName());
             checkbox.setSelected(false);
             checkbox.setName(c.getName());
-//        courseNames.add(c.getName());
 
             coursePanel.add(checkbox);
             courseCheckBox.add(checkbox);
@@ -462,7 +459,7 @@ public class StudentFrame extends javax.swing.JFrame {
         Student student = this.getStudent();
         student.setId(studentId);
         boolean success = studentDAO.updateStudent(student);
-        
+
         if (success) {
             JOptionPane.showMessageDialog(this, "Updated Successfully");
             fillStudentTable();
@@ -481,13 +478,8 @@ public class StudentFrame extends javax.swing.JFrame {
         Department department = departmentDAO.getDepartmentById(student.getDepartment().getId());
         departmentComboBox.setSelectedItem(department.getName());
 //        for (JCheckBox jchk : courseCheckBox) {
-//            for(String cName:courseNames){
-//            if(cName.equals(jchk.getName())){
-//            jchk.setSelected(true);
-//            }
-//            }
-//        }
-        
+
+
     }//GEN-LAST:event_studentTableMouseClicked
 
     private void deleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBtnActionPerformed
