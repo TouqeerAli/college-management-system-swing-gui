@@ -50,7 +50,7 @@ To run this project:
 
 ![dashboard](https://github.com/TouqeerAli/college-management-system-swing-gui/assets/103946729/61d41ff3-0861-4f87-8c80-53791b93fb4a)
 
-#3# Student Frame:
+### Student Frame:
 
 ![student_frame](https://github.com/TouqeerAli/college-management-system-swing-gui/assets/103946729/a075731c-192a-45a3-81a3-7985b0249c92)
 
